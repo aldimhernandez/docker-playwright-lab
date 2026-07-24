@@ -17,6 +17,7 @@ test-results/
 playwright-report/
 playwright-report-
 playwright-report*/
+allure-results/
 
 # Temporary files
 .DS_Store
@@ -38,6 +39,7 @@ coverage/
 .env.*
 
 # Generated files
+.features-gen/
 dist/
 build/
 

@@ -13,7 +13,7 @@ const testDir = defineBddConfig({
 export default defineConfig({
     testDir,
     retries: 0,
-    reporter: [['list'], ['html', { outputFolder: 'playwright-report', open: 'never' }]],
+    reporter: [["line"], ["allure-playwright"]],
     use: {
         baseURL: 'https://playwright.dev',
         ignoreHTTPSErrors: true,
