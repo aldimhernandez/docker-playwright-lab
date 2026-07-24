@@ -20,12 +20,13 @@
     "test:ui": "npx bddgen && npx playwright test --ui",
     "test:tag": "npx bddgen --tags '@tagExample' && npx playwright test",
     "test:debug": "npx bddgen && npx playwright test --verbose",
-    "allure:serve": "allure serve allure-results"
+    "allure:run": "allure run -- npm test",
+    "allure:open": "allure open allure-report"
   },
   "devDependencies": {
-    "@playwright/test": "^1.61.1",
+    "@playwright/test": "1.61.1",
     "@types/node": "^26.1.1",
-    "allure-commandline": "^2.43.0",
+    "allure": "^3.14.3",
     "allure-playwright": "^3.10.2",
     "playwright-bdd": "^9.2.0",
     "tsx": "^4.23.1"

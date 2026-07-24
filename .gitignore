@@ -18,6 +18,7 @@ playwright-report/
 playwright-report-
 playwright-report*/
 allure-results/
+allure-report/
 
 # Temporary files
 .DS_Store
