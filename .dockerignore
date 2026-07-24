@@ -1,0 +1,9 @@
+.git
+.github
+node_modules
+playwright-report
+test-results
+allure-results
+allure-report
+.features-gen
+npm-debug.log
