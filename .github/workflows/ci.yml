@@ -16,7 +16,7 @@ jobs:
   docker-pw-demo:
     runs-on: ubuntu-latest
     container:
-      image: aldimh/docker-playwright-demo # mi imagen de Docker con Playwright y Allure preinstalados :D
+      image: aldimh/docker-playwright-demo:1.0.0 # mi imagen de Docker con Playwright y Allure preinstalados :D
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
