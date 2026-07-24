@@ -1,7 +1,0 @@
-
-> docker-playwright-demo@1.0.0 test
-> npx bddgen && npx playwright test
-
-Error: No tests found
-
-[1A[2K
