@@ -16,7 +16,11 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx bddgen && npx playwright test",
+    "test:ui": "npx bddgen && npx playwright test --ui",
+    "test:tag": "npx bddgen --tags '@tagExample' && npx playwright test",
+    "test:debug": "npx bddgen && npx playwright test --verbose",
+    "allure:serve": "allure serve allure-results"
   },
   "devDependencies": {
     "@playwright/test": "^1.61.1",
