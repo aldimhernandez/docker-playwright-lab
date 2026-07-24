@@ -16,7 +16,7 @@ jobs:
   docker-pw-demo:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.61.1-noble
+      image: aldimh/docker-playwright-demo # mi imagen de Docker con Playwright y Allure preinstalados :D
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -26,16 +26,8 @@ jobs:
         uses: actions/checkout@v4
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
       - name: Install dependencies
         run: npm ci
-
-      - name: Set HOME for Playwright (Firefox workaround)
-        run: echo "HOME=/root" >> $GITHUB_ENV
 
       # Run tests (must use Allure reporter)
       - name: Run tests and generate report
