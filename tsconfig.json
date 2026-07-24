@@ -11,10 +11,17 @@
         "allowImportingTsExtensions": true,
         "types": [
             "node"
-        ]
+        ],
+        "typeRoots": [
+            "./types",
+            "./node_modules/@types"
+        ],
     },
     "include": [
-        "**/*.ts"
+        "src/**/*.ts",
+        "tests/**/*.ts",
+        "types/**/*.d.ts",
+        "playwright.config.ts"
     ],
     "exclude": [
         "node_modules",
