@@ -1,0 +1,63 @@
+name: docker playwright demo
+run-name: docker pw demo pipeline ${{github.run_number}}  by ${{ github.actor }}
+
+on:
+  push:
+  workflow_dispatch:
+  pull_request:
+
+# permissions to enable comments and checks for pull requests
+permissions:
+  contents: write        # publicar el reporte en la rama gh-pages
+  pull-requests: write   # agregar el resumen de Allure al PR
+  checks: write          # publicar el Quality Gate como GitHub Check
+
+jobs:
+  docker-pw-demo:
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.61.1-noble
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Set HOME for Playwright (Firefox workaround)
+        run: echo "HOME=/root" >> $GITHUB_ENV
+
+      # Run tests (must use Allure reporter)
+      - name: Run tests and generate report
+        run: npx allure run -- npm run test
+        # This generates allure-results/ directory and creates allure-report/ with summary.json
+
+      - name: Deploy Allure report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
+          publish_branch: gh-pages
+
+      # Post summary to PR
+      - name: Run Allure Action
+        if: always()
+        uses: allure-framework/allure-action@v0
+        with:
+          report-directory: "./allure-report"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          remote-href: "https://aldimhernandez.github.io/docker-playwright-demo/"
+
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
