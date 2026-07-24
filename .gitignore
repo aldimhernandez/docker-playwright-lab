@@ -56,5 +56,4 @@ docker-compose.override.yml
 *.trace
 
 # BDD feature or report artifacts
-*.feature
 *report*.html
