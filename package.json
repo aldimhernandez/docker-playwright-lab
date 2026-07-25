@@ -1,5 +1,5 @@
 {
-  "name": "docker-playwright-demo",
+  "name": "docker-playwright-lab",
   "version": "1.0.0",
   "description": "A sample Playwright project demonstrating containerized test automation and CI-ready workflows",
   "keywords": [
