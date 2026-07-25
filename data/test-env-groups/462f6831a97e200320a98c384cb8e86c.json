@@ -1,1 +1,1 @@
-{"id":"462f6831a97e200320a98c384cb8e86c","fullName":"src/tests/features/sample.feature.spec.js:6:3","name":"Check get started link","status":"failed","testResultsByEnv":{"default":"5ea78ee96ffec906fdfda0161a3f59c3"}}
+{"id":"462f6831a97e200320a98c384cb8e86c","fullName":"src/tests/features/sample.feature.spec.js:6:3","name":"Check get started link","status":"passed","testResultsByEnv":{"default":"75711a0959ee584627328bd72e9ff024"}}
