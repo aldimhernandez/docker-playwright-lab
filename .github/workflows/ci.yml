@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Set HOME for Playwright (Firefox workaround)
+        run: echo "HOME=/root" >> $GITHUB_ENV
+
       # Run tests (must use Allure reporter)
       - name: Run tests and generate report
         run: npx allure run -- npm run test
