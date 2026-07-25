@@ -1,5 +1,5 @@
-name: docker playwright demo
-run-name: docker pw demo pipeline ${{github.run_number}}  by ${{ github.actor }}
+name: docker playwright lab
+run-name: docker pw lab pipeline ${{github.run_number}}  by ${{ github.actor }}
 
 on:
   push:
@@ -13,7 +13,7 @@ permissions:
   checks: write          # publicar el Quality Gate como GitHub Check
 
 jobs:
-  docker-pw-demo:
+  docker-pw-lab:
     runs-on: ubuntu-latest
     container:
       image: aldimh/docker-playwright-demo:1.0.0 # mi imagen de Docker con Playwright y Allure preinstalados :D
@@ -52,7 +52,7 @@ jobs:
         with:
           report-directory: "./allure-report"
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          remote-href: "https://aldimhernandez.github.io/docker-playwright-demo/"
+          remote-href: "https://aldimhernandez.github.io/docker-playwright-lab/"
 
 
       - run: echo "🍏 This job's status is ${{ job.status }}."

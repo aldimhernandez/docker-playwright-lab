@@ -1,7 +1,7 @@
 {
   "name": "docker-playwright-lab",
   "version": "1.0.0",
-  "description": "A sample Playwright project demonstrating containerized test automation and CI-ready workflows",
+  "description": "Hands-on Docker lab using Playwright to explore reproducible development environments, Docker Compose, image publishing, and CI workflows",
   "keywords": [
     "docker",
     "playwright",
