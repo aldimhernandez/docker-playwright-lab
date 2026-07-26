@@ -7,6 +7,38 @@ Este repositorio muestra cómo empaquetar un entorno con Node.js, Playwright y s
 navegadores, publicarlo como imagen, reutilizarlo desde otra computadora y
 ejecutarlo tanto localmente con Docker Compose como en GitHub Actions.
 
+## Highlights
+
+- 🐳 Entorno reproducible con Docker
+- 🎭 Playwright ejecutándose dentro de contenedores Linux
+- 🧩 Docker Compose para desarrollo local
+- 🚀 Misma imagen utilizada en GitHub Actions
+- 📊 Reportes Allure publicados con GitHub Pages
+- 📦 Imagen compartida mediante Docker Hub
+
+## Objetivo
+
+En muchos equipos de automatización, el entorno local del developer no coincide
+con el utilizado por el pipeline de integración continua. Diferencias de versión
+en Node.js, Playwright o sus dependencias pueden provocar que una prueba funcione
+localmente y falle en CI.
+
+Este laboratorio nace para responder una pregunta muy simple:
+
+> ¿Cómo consigo que el entorno local y el de CI sean el mismo?
+
+La motivación surge de una experiencia real trabajando con Playwright sobre
+Windows mientras el pipeline utilizaba un entorno Linux basado en Docker.
+
+Además, busca simplificar situaciones habituales de un equipo:
+
+- que un QA manual o un Product Owner puedan ejecutar únicamente las pruebas de
+  su interés mediante tags y consultar un reporte sin la necesidad de instalar Node.js,
+  Playwright browsers, y todas las dependencias necesarias para la ejecución;
+
+- que un nuevo integrante del equipo pueda comenzar a trabajar sin encontrarse
+  con problemas de configuración derivados de diferencias de versión.
+
 > ¿Ya trabajás con Docker y querés ir directo a la arquitectura y las decisiones?
 > Consultá la [guía técnica](docs/technical-guide.md).
 
